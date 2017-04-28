@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+/********** Início do conteúdo do template **********/
+
+html {
+	font: 12px Calibri;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+label {
+	font: 16px Calibri;
+}

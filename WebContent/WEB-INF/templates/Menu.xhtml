@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+	<nav class="aw-menu">
+		<ul>
+			<li>
+				<h:link outcome="home-netfoods.xhtml">
+					<i class="fa fa-fw fa-area-chart" />
+					Dashboard
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="clientes.xhtml">
+					<i class="fa  fa-fw  fa-user" />
+					Usuários
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="tipo-usuario.xhtml">
+					<i class="fa  fa-fw  fa-users" />
+					Tipos de usuário
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="cargos.xhtml">
+					<i class="fa  fa-fw  fa-suitcase" />
+					Cargos
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="categorias.xhtml">
+					<i class="fa  fa-fw  fa-cubes" />
+					Categoria
+				</h:link>
+				<ul>
+				<li>
+				<h:link outcome="categorias-novo.xhtml" >
+				<i class="fa  fa-fw  fa-cubes"/>
+				Nova Categoria
+				</h:link>
+				</li>
+				</ul>
+			</li>
+			<li>
+				<h:link outcome="subcategorias.xhtml">
+					<i class="fa fa-fw fa-cutlery" />
+					Subcategorias
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="unidadesmedida.xhtml">
+					<i class="fa  fa-fw  fa-balance-scale" />
+					Unidade Medida
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="nivel-permissao.xhtml">
+					<i class="fa  fa-fw  fa-lock" />
+					Permissões
+				</h:link>
+			</li>
+			<li>
+				<h:link outcome="gerenciamento-produtos.xhtml">
+					<i class="fa  fa-fw  fa-product-hunt" />
+					Produtos
+				</h:link>
+			</li>
+		</ul>
+	</nav>
+
+</ui:composition>

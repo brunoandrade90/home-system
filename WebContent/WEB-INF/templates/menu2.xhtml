@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+	<div class="posicaoMenu">
+		<nav>
+			<div class="item">
+
+				<input type="checkbox" id="check1"> </input> <label for="check1">
+					Categorias</label>
+				<ul>
+					<li><h:link outcome="categorias.xhtml">
+							<i class="fa  fa-fw  fa-cubes" />
+					Categoria
+</h:link></li>
+				</ul>
+
+
+			</div>
+
+
+			<div class="item">
+				<input type="checkbox" id="check2"> </input> <label for="check2">
+					SubCategorias</label>
+				<ul>
+					<li><a href="">Nova SubCategoria</a></li>
+				</ul>
+
+			</div>
+
+
+			<div class="item">
+				<input type="checkbox" id="check3"> </input> <label for="check3">
+					Produto</label>
+				<ul>
+
+					<li><a href="">Produto</a></li>
+					<li><a href="">Importar Produtos</a></li>
+					<li><a href="">Novo Produto</a></li>
+				</ul>
+			</div>
+
+		</nav>
+	</div>
+</ui:composition>

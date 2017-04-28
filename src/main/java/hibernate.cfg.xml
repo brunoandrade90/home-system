@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">programador</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/netfoods</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.default_schema">netfoods</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <mapping class="br.com.netfoods.model.entidades.Carrinho"/>
+  <mapping class="br.com.netfoods.model.entidades.Carrinhoproduto"/>
+  <mapping class="br.com.netfoods.model.entidades.Categoria"/>
+  <mapping class="br.com.netfoods.model.entidades.Cliente"/>
+  <mapping class="br.com.netfoods.model.entidades.Fotosproduto"/>
+  <mapping class="br.com.netfoods.model.entidades.Grupousuario"/>
+  <mapping class="br.com.netfoods.model.entidades.Log"/>
+  <mapping class="br.com.netfoods.model.entidades.Loglogin"/>
+  <mapping class="br.com.netfoods.model.entidades.Nivelpermissao"/>
+  <mapping class="br.com.netfoods.model.entidades.Oferta"/>
+  <mapping class="br.com.netfoods.model.entidades.Pedido"/>
+  <mapping class="br.com.netfoods.model.entidades.Produto"/>
+  <mapping class="br.com.netfoods.model.entidades.Statuspedido"/>
+  <mapping class="br.com.netfoods.model.entidades.Subcategoria"/>
+  <mapping class="br.com.netfoods.model.entidades.Tipousuario"/>
+  <mapping class="br.com.netfoods.model.entidades.Unidadesdemedida"/>
+  <mapping class="br.com.netfoods.model.entidades.Usuario"/>
+ </session-factory>
+</hibernate-configuration>
