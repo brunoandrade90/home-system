@@ -9,7 +9,6 @@ public interface IHibernateGenericoDAO<T, Type extends Serializable>{
 	boolean editar(T _entidade);
 	boolean deletar (T _entidade);
 	void reverter();
-	boolean deletarTodos(T _entidade);
 	public T listarPorId(Integer _id);
 	List<T> listarTodos();
 

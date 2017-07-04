@@ -118,28 +118,7 @@ public abstract class HibernateUtil<T, Type extends Serializable> implements IHi
 		}
 
 	}
-	@SuppressWarnings("unchecked")
-	public boolean deletarTodos(T _entidade) {
 
-		try {
-			
-			openCurrentSessionwithTransaction();
-			Criteria cq = getCurrentSession().createCriteria(classe);
-			List<T> listagenerica = cq.list();
-			for (T t : listagenerica) {
-				getCurrentSession().delete(t);
-			}
-			closeCurrentSessionwithTransaction();
-			return true;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			reverter();
-			return true;
-		}
-
-		 
-	}
 	public List<T> listarTodos() {
 		openCurrentSessionwithTransaction();
 		@SuppressWarnings("unchecked")

@@ -2163,6 +2163,7 @@ div.ui-button, .ui-splitbutton {
 /* ie6 */
 * html .ui-growl {
 	position: absolute;
+	top:30px;
 }
 
 * html .ui-growl-item {

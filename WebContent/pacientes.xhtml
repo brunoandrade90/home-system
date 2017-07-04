@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/WEB-INF/templates/Layout.xhtml">
+	
+		
+	
+	<ui:define name="content">
+	
+
+		<h:form id="form-lista-pacientes">
+			<p:growl id="msgs" />
+			<p:dataTable id="tabela-pacientes" value="#{pacientesBean.ListarTodosPacientes()}" var="paciente" styleClass="dataTableNova" emptyMessage="Não há categorias cadastradas.">
+				
+				<f:facet name="header">
+					<label style="margin-left: 20px;">Pacientes  Cadastrados</label>
+				</f:facet>
+				
+				<p:column headerText="Id" priority="3">
+					<h:outputText value="#{paciente.idPaciente}" />
+				</p:column>
+
+				<p:column headerText="Nome" priority="1" filterBy="#{paciente.nome}">
+					<h:outputText value="#{paciente.nome}" />
+				</p:column>
+				
+				<p:column headerText="CPF" priority="1" filterBy="#{paciente.cpf}">
+					<h:outputText value="#{paciente.cpf}" />
+				</p:column>
+
+				<p:column headerText="Ações" priority="1">
+					<p:commandButton icon="ui-icon-tag" action="#{pacientesBean.chamaPaginaEdicaoPaciente}" style="margin-right: 5px;">
+						<f:setPropertyActionListener value="#{paciente}" target="#{pacientesBean.pacienteEditado}" />
+					</p:commandButton>
+					<p:commandButton action="#{pacientesBean.excluir(paciente)}" icon="ui-icon-circle-close" update=":form-lista-pacientes:tabela-pacientes" ajax="false" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+	</ui:composition>
+</html>
