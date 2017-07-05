@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/WebContent"/>
-        <property name="context-root" value="blue-algaworks"/>
         <property name="java-output-path" value="/layout-primefaces-patagonia/target/classes"/>
+        <property name="context-root" value="home-system"/>
     </wb-module>
 </project-modules>

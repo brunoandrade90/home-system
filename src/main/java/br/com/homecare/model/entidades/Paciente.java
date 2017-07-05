@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="pacientes")
 @NamedQuery(name="Paciente.findAll", query="SELECT p FROM Paciente p")
-public class Paciente implements Serializable {
+public class Paciente implements Serializable,Cloneable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -39,6 +39,44 @@ public class Paciente implements Serializable {
 
 	public Paciente() {
 	}
+	
+	
+
+	public Paciente(int idPaciente, String celular, String complemento, String cpf, String email, String endereco,
+			String nome, String numero, String sobrenome, String telefone) {
+		super();
+		this.idPaciente = idPaciente;
+		this.celular = celular;
+		this.complemento = complemento;
+		this.cpf = cpf;
+		this.email = email;
+		this.endereco = endereco;
+		this.nome = nome;
+		this.numero = numero;
+		this.sobrenome = sobrenome;
+		this.telefone = telefone;
+	}
+	
+	
+	@Override
+	public Paciente clone() throws CloneNotSupportedException {
+	Paciente p = new Paciente();
+	p.setCelular(this.celular);
+	p.setCpf(this.cpf);
+	p.setComplemento(this.complemento); 
+	p.setEmail(this.email);
+	p.setEndereco(this.endereco);
+	p.setIdPaciente(this.idPaciente); 
+	p.setNome(this.nome);
+	p.setNumero(this.numero);
+	p.setSobrenome(this.sobrenome);
+	p.setTelefone(this.telefone); 
+		return p;
+	}
+	
+
+
+
 
 	public int getIdPaciente() {
 		return this.idPaciente;
@@ -119,6 +157,13 @@ public class Paciente implements Serializable {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+	
+	
+	@Override
+	public String toString() {
+	
+		return this.nome + this.cpf + this.celular;
 	}
 
 }

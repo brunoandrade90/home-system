@@ -29,19 +29,28 @@
 					    	
 					    
 					    	
+					   	
 							<p:outputLabel for="nome" value="Nome:" style="margin-left:20px;" />
 							<p:inputText id="nome" value="#{pacientesBean.pacienteEditado.nome}" size="33" style="margin-left:20px;" required="true" />
 							<p:outputLabel/> 
+							<p:outputLabel for="sobrenome" value="Sobrenome:"   style="margin-left:30px;" />
+							<p:inputText id="sobrenome"  value="#{pacientesBean.pacienteEditado.sobrenome}" style="margin-left:20px;" size="33" required="true"/>
 							
-							<p:outputLabel for="sobrenome" value="Sobrenome:"  />
-							<p:inputText id="sobrenome"  value="#{pacientesBean.pacienteEditado.sobrenome}" style="margin-left:30px;" size="33" required="true"/>
+							
+							<p:outputLabel for="email" value="E-mail:"   style="margin-left:20px;" />
+							<p:inputText id="email"  value="#{pacientesBean.pacienteEditado.email}" style="margin-left:20px;" size="33" required="true"/>
+							<p:outputLabel/> 
+							<p:outputLabel for="cpf" value="CPF:" style="margin-left:20px;" />
+							<p:inputMask id="cpf"  value="#{pacientesBean.pacienteEditado.cpf}" requiredMessage="Digite um CPF Válido" mask="999.999.999-99" style="margin-left:20px;" size="33"  required="true"/>
+						
 							
 							
 							<p:outputLabel for="telefone" value="Telefone:" style="margin-left:20px;" />
-							<p:inputMask id="telefone"  value="#{pacientesBean.pacienteEditado.telefone}" mask="(99)99999-9999" style="margin-left:20px;" size="33"  required="true"/>
+							<p:inputMask id="telefone"  value="#{pacientesBean.pacienteEditado.telefone}" mask="(99)9999-9999" style="margin-left:20px;" size="33"  required="true"/>
 							<p:outputLabel/> 
-							<p:outputLabel/> 
-							<p:outputLabel/> 
+							<p:outputLabel for="celular" value="Celular:" style="margin-left:20px;" />
+							<p:inputMask id="celular"  value="#{pacientesBean.pacienteEditado.celular}" mask="(99)99999-9999" style="margin-left:20px;" size="33"  required="true"/>
+						
 												
 							<p:outputLabel for="endereco" value="Endereço:" style="margin-left:20px;"/>
 							<p:inputText id="endereco" value="#{pacientesBean.pacienteEditado.endereco}" size="40"  required="true" style="margin-left:20px;" />
@@ -56,7 +65,7 @@
 						</p:panelGrid>
 						
 						<br/>
-											<p:commandButton value="Adicionar Paciente"
+											<p:commandButton value="Editar Paciente"
 								actionListener="#{pacientesBean.editar()}" 
 								action="#{pacientesBean.chamaPaginaListaDePacientes()}"
 								style="float:right" update="form-editar-paciente:msg" />	

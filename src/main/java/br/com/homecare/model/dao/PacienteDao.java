@@ -32,5 +32,17 @@ public boolean checarExistenciaPaciente(Paciente _paciente) {
 		
 		return existe;
 	}
- 
+
+/*Cria Pacientes Randômicos
+ * 
+ * Factory Method
+ */
+public List<Paciente> criarPacientesRandomicos(){
+	List<Paciente> listaDePacientes = new ArrayList<>();
+	listaDePacientes.add(new Paciente(1,"(13)-997713177","","358.315.558-01","bruno.andrade90@hotmail.com","Rua dr Adolfo Assis","Bruno","66","Andrade",""));
+	listaDePacientes.add(new Paciente(2,"(13)-997713178","","358.315.558-02","bruno.andrade91@hotmail.com","Rua dr Adolfo Assis","Bruno2","66","Andrade",""));
+	return listaDePacientes;
+	
+}
+
 }

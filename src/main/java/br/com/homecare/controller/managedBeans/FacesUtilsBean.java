@@ -14,12 +14,15 @@ public class FacesUtilsBean implements Serializable {
 	public static void lancarMensagemSucesso(String mensagem) {
 		FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, mensagem, mensagem);
 		FacesContext facesContext = FacesContext.getCurrentInstance();
+		facesContext.getExternalContext().getFlash().setKeepMessages(true);
 		facesContext.addMessage(null, facesMessage);
 	}
 	
 	public static void lancarMensagemErro(String mensagem) {
         FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, mensagem, mensagem);
         FacesContext facesContext = FacesContext.getCurrentInstance();
+
+		facesContext.getExternalContext().getFlash().setKeepMessages(true);
         facesContext.addMessage(null, facesMessage);
         
     }

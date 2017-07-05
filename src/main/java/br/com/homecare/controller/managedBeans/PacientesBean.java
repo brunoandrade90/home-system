@@ -6,7 +6,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import br.com.homecare.model.dao.PacienteDao;
 import br.com.homecare.model.entidades.Paciente;
-import br.com.homecare.model.entidades.Usuario;
 
 @SessionScoped
 @ManagedBean
@@ -17,6 +16,8 @@ public class PacientesBean {
 		paciente = new Paciente();
 		pacienteEditado = new Paciente();
 	}
+	
+
 	
 	public String adicionar(){
 	if(!new PacienteDao().checarExistenciaPaciente(paciente)){
@@ -35,8 +36,9 @@ public class PacientesBean {
 	public String editar() {
 
 		if (new PacienteDao().editar(pacienteEditado)) {
-			FacesUtilsBean.lancarMensagemSucesso("Usuario alterado com sucesso.");
+			FacesUtilsBean.lancarMensagemSucesso("Paciente alterado com sucesso.");
 			pacienteEditado = new Paciente();
+			
 		} else {
 			FacesUtilsBean.lancarMensagemErro("Erro! Nao foi possivel alterar o usuario.");
 		}
@@ -48,7 +50,7 @@ public class PacientesBean {
 	public String excluir(Paciente _paciente) {
 
 		if (new PacienteDao().deletar(_paciente)) {
-			FacesUtilsBean.lancarMensagemSucesso("Usuario Deletado com sucesso.");
+			FacesUtilsBean.lancarMensagemSucesso("Paciente Deletado com sucesso.");
 		} else {
 			FacesUtilsBean.lancarMensagemErro("Erro! Nao foi possivel alterar o usuario.");
 		}
@@ -60,6 +62,25 @@ public class PacientesBean {
 	public List<Paciente> ListarTodosPacientes(){
 	 listaDePacientes =	new PacienteDao().listarTodos();
 	 return listaDePacientes;
+	}
+	
+	/*
+	 * 
+	 * Exemplo de Design Patterns
+	 */
+	public void DesignPatterns(){
+		try {
+			//Design Patterns (Prototype)
+			Paciente p = paciente.clone();
+			
+			//(FactoryMethod)
+			new PacienteDao().criarPacientesRandomicos();
+		
+		
+		} catch (CloneNotSupportedException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -103,6 +124,8 @@ public class PacientesBean {
 		this.listaDePacientes = listaDePacientes;
 	}
 
+	
+	
 	
 
 	private Paciente paciente;

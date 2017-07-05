@@ -1,75 +1,99 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/Layout.xhtml">
 
-	<ui:composition template="/WEB-INF/templates/Layout.xhtml">
-	
 
 	<ui:define name="content">
-	
-		<h:form id="form-cadastrar-paciente">
-			<p:growl id="msg"/>
-   
-			<div class="ui-grid ui-grid-responsive">
-				<div class="ui-grid-row">	
-					<div class="ui-grid-col-12">					
-						<p:panelGrid columns="5" layout="grid" 
-								columnClasses="ui-grid-col-2, ui-grid-col-2,ui-grid-col-1,ui-grid-col-2,ui-grid-col-2">
-							 
-							 
-							<f:facet name="header">
-					        	<label>Dados do Paciente</label>
-					        </f:facet>
-					    	
-					    
-					    	
-							<p:outputLabel for="nome" value="Nome:" style="margin-left:20px;" />
-							<p:inputText id="nome" value="#{pacientesBean.paciente.nome}" size="33" style="margin-left:20px;" required="true" />
-							<p:outputLabel/> 
-							<p:outputLabel for="sobrenome" value="Sobrenome:"   style="margin-left:30px;" />
-							<p:inputText id="sobrenome"  value="#{pacientesBean.paciente.sobrenome}" style="margin-left:20px;" size="33" required="true"/>
-							
-							
-							<p:outputLabel for="email" value="E-mail:"   style="margin-left:20px;" />
-							<p:inputText id="email"  value="#{pacientesBean.paciente.email}" style="margin-left:20px;" size="33" required="true"/>
-							<p:outputLabel/> 
-							<p:outputLabel for="cpf" value="CPF:" style="margin-left:20px;" />
-							<p:inputMask id="cpf"  value="#{pacientesBean.paciente.cpf}" mask="999.999.999-99" style="margin-left:20px;" size="33"  required="true"/>
-						
-							
-							
-							<p:outputLabel for="telefone" value="Telefone:" style="margin-left:20px;" />
-							<p:inputMask id="telefone"  value="#{pacientesBean.paciente.telefone}" mask="(99)9999-9999" style="margin-left:20px;" size="33"  required="true"/>
-							<p:outputLabel/> 
-							<p:outputLabel for="celular" value="Celular:" style="margin-left:20px;" />
-							<p:inputMask id="celular"  value="#{pacientesBean.paciente.celular}" mask="(99)99999-9999" style="margin-left:20px;" size="33"  required="true"/>
-						
-												
-							<p:outputLabel for="endereco" value="Endereço:" style="margin-left:20px;"/>
-							<p:inputText id="endereco" value="#{pacientesBean.paciente.endereco}" size="40"  required="true" style="margin-left:20px;" />
-						
-							<p:outputLabel/> 
-							<p:outputLabel for="numero" value="Número:" style="margin-left:30px;"/>
-							<p:inputMask id="numero" value="#{pacientesBean.paciente.numero}"  required="true" style="margin-left:20px;" size="10"/>
-							<p:outputLabel/> 
-							
 
-																	
+<style>
+.ui-growl{
+    position:fixed;
+    top:15%;
+}
+</style>
+
+		<h:form id="form-cadastrar-paciente">
+			
+				<p:growl id="msgs" />
+
+			<div class="ui-grid ui-grid-responsive">
+				<div class="ui-grid-row">
+					<div class="ui-grid-col-12">
+						<p:panelGrid columns="5" layout="grid"
+							columnClasses="ui-grid-col-2, ui-grid-col-2,ui-grid-col-1,ui-grid-col-2,ui-grid-col-2">
+
+
+							<f:facet name="header">
+								<label>Dados do Paciente</label>
+							</f:facet>
+
+
+
+							<p:outputLabel for="nome" value="Nome:" style="margin-left:20px;" />
+							<p:inputText id="nome" value="#{pacientesBean.paciente.nome}"
+								size="33" style="margin-left:20px;" required="true" />
+							<p:outputLabel />
+							<p:outputLabel for="sobrenome" value="Sobrenome:"
+								style="margin-left:30px;" />
+							<p:inputText id="sobrenome"
+								value="#{pacientesBean.paciente.sobrenome}"
+								style="margin-left:20px;" size="33" required="true" />
+
+
+							<p:outputLabel for="email" value="E-mail:"
+								style="margin-left:20px;" />
+							<p:inputText id="email" value="#{pacientesBean.paciente.email}"
+								style="margin-left:20px;" size="33" required="true" />
+							<p:outputLabel />
+							<p:outputLabel for="cpf" value="CPF:" style="margin-left:20px;" />
+							<p:inputMask id="cpf" value="#{pacientesBean.paciente.cpf}"
+								mask="999.999.999-99" style="margin-left:20px;" size="33"
+								required="true" />
+
+
+
+							<p:outputLabel for="telefone" value="Telefone:"
+								style="margin-left:20px;" />
+							<p:inputMask id="telefone"
+								value="#{pacientesBean.paciente.telefone}" mask="(99)9999-9999"
+								style="margin-left:20px;" size="33" required="true" />
+							<p:outputLabel />
+							<p:outputLabel for="celular" value="Celular:"
+								style="margin-left:20px;" />
+							<p:inputMask id="celular"
+								value="#{pacientesBean.paciente.celular}" mask="(99)99999-9999"
+								style="margin-left:20px;" size="33" required="true" />
+
+
+							<p:outputLabel for="endereco" value="Endereço:"
+								style="margin-left:20px;" />
+							<p:inputText id="endereco"
+								value="#{pacientesBean.paciente.endereco}" size="40"
+								required="true" style="margin-left:20px;" />
+
+							<p:outputLabel />
+							<p:outputLabel for="numero" value="Número:"
+								style="margin-left:30px;" />
+							<p:inputMask id="numero" value="#{pacientesBean.paciente.numero}"
+								required="true" style="margin-left:20px;" size="10" />
+							<p:outputLabel />
+
+
+
 						</p:panelGrid>
-						
-						<br/>
-											<p:commandButton value="Adicionar Paciente"
-								actionListener="#{pacientesBean.adicionar()}" 
-								style="float:right" update="form-cadastrar-paciente:msg" />	
+
+						<br />
+						<p:commandButton value="Adicionar Paciente"
+							actionListener="#{pacientesBean.adicionar()}" style="float:right"
+							update="form-cadastrar-paciente:msgs" />
 					</div>
 				</div>
-				</div>
-			</h:form>
-			
-			</ui:define>
-			
-				</ui:composition>
-</html>
+			</div>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
-
-	<ui:composition template="/WEB-INF/templates/Layout.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	 template="/WEB-INF/templates/Layout.xhtml">
 	
 		
 	
 	<ui:define name="content">
 	
 
+
 		<h:form id="form-lista-pacientes">
-			<p:growl id="msgs" />
+		<div class="teste" style="margin-top:40px;" >
+			<p:growl id="msgs" /></div>
 			<p:dataTable id="tabela-pacientes" value="#{pacientesBean.ListarTodosPacientes()}" var="paciente" styleClass="dataTableNova" emptyMessage="Não há categorias cadastradas.">
 				
 				<f:facet name="header">
@@ -43,4 +43,3 @@
 		</h:form>
 	</ui:define>
 	</ui:composition>
-</html>
